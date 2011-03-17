@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.6" version="2.0"
+  xmlns="http://pear.php.net/dtd/package-2.0"
+  xmlns:tasks="http://pear.php.net/dtd/tasks-1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+  <name>drI18nRoutingExtractPlugin</name>
+  <channel>pear.symfony-project.com</channel>
+  <summary>Provides a task for extracting translatable strings from the routing</summary>
+  <description>This plugin provides a task called i18n:extract-routing, which parses all the routes from your application, extracts all translatable strings and places them in a messages catalogue file, that can be read by the culture-aware routing system provided by the zxI18nRoutingPlugin</description>
+  <lead>
+    <name>Matthias Noback</name>
+    <user>matthias_at_driebit</user>
+    <email>matthias@driebit.nl</email>
+    <active>yes</active>
+  </lead>
+  <date>2011-03-08</date>
+  <time>17:01:00</time>
+  <version>
+    <release>1.0.1</release>
+    <api>1.0</api>
+  </version>
+  <stability>
+    <release>stable</release>
+    <api>stable</api>
+  </stability>
+  <license uri="http://www.symfony-project.org/license">MIT license</license>
+  <notes>-</notes>
+  <contents>
+    <dir name="/">
+      <file role="data" name="README" />
+      <file role="data" name="LICENSE" />
+      <dir name="lib">
+        <dir name="extract">
+          <file role="data" name="drI18nRoutingExtract.class.php" />
+          <file role="data" name="drI18nRoutingExtractor.class.php" />
+        </dir>
+        <dir name="task">
+          <file role="data" name="drI18nExtractRoutingTask.class.php" />
+        </dir>
+      </dir>
+    </dir>
+  </contents>
+  <dependencies>
+    <required>
+      <php>
+        <min>5.1.0</min>
+      </php>
+      <pearinstaller>
+        <min>1.4.1</min>
+      </pearinstaller>
+      <package>
+        <name>symfony</name>
+        <channel>pear.symfony-project.com</channel>
+        <min>1.2.0</min>
+        <max>1.5.0</max>
+        <exclude>1.5.0</exclude>
+      </package>
+    </required>
+  </dependencies>
+  <phprelease />
+  <changelog>
+    <release>
+      <version>
+        <release>1.0.1</release>
+        <api>1.0</api>
+      </version>
+      <stability>
+        <release>stable</release>
+        <api>stable</api>
+      </stability>
+      <date>2011-03-08</date>
+      <license uri="http://www.symfony-project.org/license">MIT license</license>
+      <notes>
+        - Added docblocks
+        - Minor refactorings  
+      </notes>
+    </release>
+    <release>
+      <version>
+        <release>1.0.0</release>
+        <api>1.0</api>
+      </version>
+      <stability>
+        <release>stable</release>
+        <api>stable</api>
+      </stability>
+      <date>2011-03-08</date>
+      <license uri="http://www.symfony-project.org/license">MIT license</license>
+      <notes>First release</notes>
+    </release>
+  </changelog>
+</package>

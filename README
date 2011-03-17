@@ -1,0 +1,39 @@
+# drI18nRoutingExtractPlugin #
+
+The ``drI18nRoutingExtractPlugin`` works together with the ``zxI18nRoutingPlugin`` (see [http://www.symfony-project.org/plugins/zxI18nRoutingPlugin](http://www.symfony-project.org/plugins/zxI18nRoutingPlugin)).
+It provides a task that walks through all the routes in your application and extracts all translatable parts and saves them to an I18n messages catalogue called ``routing``.
+
+## Installation ##
+
+Enable the plugin in your ``ProjectConfiguration`` class:
+
+    [php]
+    class ProjectConfiguration extends sfProjectConfiguration
+    {
+      public function setup()
+      {
+        // ...
+        
+        $this->enablePlugins(array(
+          // ...
+          'drI18nRoutingExtractPlugin'));
+      }
+    }
+    
+Then clear the Symfony cache:
+
+    ./symfony cc
+  
+## Usage ##
+
+Run the following task on the command line:
+
+    ./symfony i18n:extract-routing frontend nl --auto-save
+
+A new messages catalogue will be created. In the (default) case of using ``XLIFF`` for storing messages, a file called ``routing.[culture].xml`` will be created in ``apps/frontend/i18n``.
+
+This file contains all translatable parts of all routes defined in your application.
+
+To delete strings that don't occur in your routing file anymore, run:
+
+    ./symfony i18n:extract-routing frontend nl --auto-delete
